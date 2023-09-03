@@ -3,7 +3,6 @@ const searchBox = document.querySelector('#searchBox'),
 newTaskInput = document.querySelector('#newTask'),
 list = document.querySelector('.main ul')
 addBtn = document.querySelector('#addBtn')
-
 // add a task
 addBtn.addEventListener('click', (e) => {
     newTask = newTaskInput.value
@@ -16,7 +15,6 @@ addBtn.addEventListener('click', (e) => {
     let newLi = document.createElement('li')
     let newP = document.createElement('p')
     let newBtn = document.createElement('button')
-
     // enter appropriate content
     newP.innerText = newTask
     newBtn.innerText = 'delete'
@@ -27,7 +25,7 @@ addBtn.addEventListener('click', (e) => {
     newLi.append(newP, newBtn)
     // add to DOM
     list.append(newLi)
-
+    // Clear the input
     newTaskInput.value = ''
 
 })
@@ -39,12 +37,13 @@ list.addEventListener('click', (e) => {
 })
 // search a task
 searchBox.addEventListener('keyup', (e) => {
-    let testStr = searchBox.value
+    let testStr = searchBox.value.toLowerCase()
     Array.from(list.children).forEach((li) => {
-        if(!li.children[0].textContent.includes(testStr)){
+        if(!li.children[0].textContent.toLowerCase().includes(testStr)){
             li.style.display ='none'
+        } else{
+            li.style.display ='block'
         }
-
     })
 
 })
