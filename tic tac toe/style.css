@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:fantasy;
+}
+body{
+    height: 100vh;
+    background: rgb(228, 228, 246);
+    text-align: center;
+    padding: 100px;
+}
+body h1{
+    font-size: 80px;
+    font-weight: bolder;
+}
+body div{
+    margin: 30px;
+}
+body div span{
+    cursor: pointer;
+    height: 50px;
+    width: 100px;
+    font-size: 50px;
+    margin: 40px;
+    background: rgb(241, 241, 252);
+    padding: 13px 35px 8px 35px;
+}
